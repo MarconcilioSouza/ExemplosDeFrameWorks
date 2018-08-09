@@ -1,0 +1,7 @@
+C:\Work\SolutionTest\TesteDryIoC\TesteDryIoC.Dinamica\bin\Debug\TesteDryIoC.Dinamica.exe.config
+C:\Work\SolutionTest\TesteDryIoC\TesteDryIoC.Dinamica\bin\Debug\TesteDryIoC.Dinamica.exe
+C:\Work\SolutionTest\TesteDryIoC\TesteDryIoC.Dinamica\bin\Debug\TesteDryIoC.Dinamica.pdb
+C:\Work\SolutionTest\TesteDryIoC\TesteDryIoC.Dinamica\bin\Debug\FluentValidation.dll
+C:\Work\SolutionTest\TesteDryIoC\TesteDryIoC.Dinamica\bin\Debug\FluentValidation.xml
+C:\Work\SolutionTest\TesteDryIoC\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Dinamica.exe
+C:\Work\SolutionTest\TesteDryIoC\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Dinamica.pdb

@@ -1,0 +1,7 @@
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\ManipulandoTasks\bin\Debug\ManipulandoTasks.exe.config
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\ManipulandoTasks\bin\Debug\ManipulandoTasks.exe
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\ManipulandoTasks\bin\Debug\ManipulandoTasks.pdb
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\ManipulandoTasks\obj\Debug\ManipulandoTasks.csprojAssemblyReference.cache
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\ManipulandoTasks\obj\Debug\ManipulandoTasks.csproj.CoreCompileInputs.cache
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\ManipulandoTasks\obj\Debug\ManipulandoTasks.exe
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\ManipulandoTasks\obj\Debug\ManipulandoTasks.pdb

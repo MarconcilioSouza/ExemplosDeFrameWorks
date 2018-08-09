@@ -1,0 +1,16 @@
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\NHSecondLevelCache.exe.config
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\NHSecondLevelCache.exe
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\NHSecondLevelCache.pdb
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\FluentNHibernate.dll
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\Iesi.Collections.dll
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\NHibernate.Caches.SysCache2.dll
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\NHibernate.dll
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\FluentNHibernate.pdb
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\FluentNHibernate.xml
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\Iesi.Collections.xml
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\bin\Debug\NHibernate.xml
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\obj\Debug\NHSecondLevelCache.csprojAssemblyReference.cache
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\obj\Debug\NHSecondLevelCache.csproj.CoreCompileInputs.cache
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\obj\Debug\NHSecondLevelCache.csproj.CopyComplete
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\obj\Debug\NHSecondLevelCache.exe
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\NHSecondLevelCache\obj\Debug\NHSecondLevelCache.pdb

@@ -1,0 +1,6 @@
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Configuration\bin\Debug\Configuration.dll
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Configuration\bin\Debug\Configuration.pdb
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Configuration\obj\Debug\Configuration.csprojAssemblyReference.cache
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Configuration\obj\Debug\Configuration.csproj.CoreCompileInputs.cache
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Configuration\obj\Debug\Configuration.dll
+A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Configuration\obj\Debug\Configuration.pdb
