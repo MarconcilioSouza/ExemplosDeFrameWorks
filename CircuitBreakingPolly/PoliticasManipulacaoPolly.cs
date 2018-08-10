@@ -1,9 +1,12 @@
 ﻿using CircuitBreakingPolly.Contratos;
 using Polly;
 using Polly.CircuitBreaker;
+using Polly.Fallback;
 using Polly.Retry;
+using Polly.Wrap;
 using System;
 using System.Data.SqlClient;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CircuitBreakingPolly
@@ -11,6 +14,89 @@ namespace CircuitBreakingPolly
 
     public class PoliticasManipulacaoPolly //: ICircuitBreaker
     {
+        public void Verificar_Funcionamento_Circuit_Break()
+        {
+            CircuitBreakerPolicy policy;
+
+            policy = Policy.Handle<DivideByZeroException>().CircuitBreaker(2, TimeSpan.FromMinutes(1));
+
+            for (int i = 0; i < 3; i++)
+            {
+                try
+                {
+                    if (policy.CircuitState == CircuitState.Closed)
+                        policy.Execute(() => Divide(3, 0));
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+
+        }
+
+        public void Verificar_Funcionamento_Fallback()
+        {
+            FallbackPolicy policy;
+
+            policy = Policy.Handle<DivideByZeroException>().Fallback(() => DivideWithoutZero(3, 0));
+
+            var result = policy.ExecuteAndCapture(() => Divide(3, 0));
+        }
+
+        private int Divide(int x, int y)
+        {
+            Thread.Sleep(2000);
+            var z = x / y;
+
+            return z;
+        }
+
+        private int DivideWithoutZero(int v1, int v2)
+        {
+            int result = 99;
+
+            if (v2 > 0)
+                result = v1 / v2;
+
+            return result;
+        }
+
+        public void Verificar_Funcionamento_Retry()
+        {
+            RetryPolicy retry;
+
+            retry = Policy.Handle<DivideByZeroException>().Retry(2);
+        }
+
+        public void Verificar_Funcionamento_Wrap()
+        {
+            CircuitBreakerPolicy policyCircuit;
+            FallbackPolicy policyFallback;
+            RetryPolicy policyRetry;
+            PolicyWrap policyWrap;
+
+            policyRetry = Policy.Handle<DivideByZeroException>().Retry(2);
+            policyFallback = Policy.Handle<DivideByZeroException>().Fallback(() => DivideWithoutZero(3, 0));
+            policyCircuit = Policy.Handle<DivideByZeroException>().CircuitBreaker(2, TimeSpan.FromMinutes(1));
+
+            policyWrap = Policy.Wrap(policyFallback, policyCircuit);
+
+            for (int i = 0; i < 3; i++)
+            {
+                try
+                {
+                    if (policyCircuit.CircuitState == CircuitState.Closed)
+                        policyWrap.Execute(() => Divide(3, 0));
+                    else
+                        policyFallback.Execute(() => DivideWithoutZero(1, 0));
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
         public static RetryPolicy getPolicyRetry()
         {
             return Policy.Handle<SqlException>()
@@ -137,7 +223,6 @@ namespace CircuitBreakingPolly
         }
 
 
-        // nomtei mas não entendi direito ver o metodo abaixo
         public Task ExecuteFallback(Func<Task> action, Func<Task> fallbackAction)
         {
             Program.programStartTime = DateTime.Now;
@@ -182,10 +267,10 @@ namespace CircuitBreakingPolly
                 .Retry(2);
             try
             {
-                result = politicaWithFallback.Execute(action);
+                // result = politicaWithFallback.Execute(action);
 
                 // ou combinado
-                var mixedPolicy = Policy.Wrap(politicaWithFallback, politicaRetry).Execute(action);
+                result = Policy.Wrap(politicaWithFallback, politicaRetry).Execute(action);
             }
             catch (AggregateException ex)
             {

@@ -18,3 +18,14 @@ A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\CircuitBreakingPolly\obj\Debug
 A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csproj.CopyComplete
 A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.exe
 A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.pdb
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\CircuitBreakingPolly.exe.config
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\CircuitBreakingPolly.exe
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\CircuitBreakingPolly.pdb
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\Polly.dll
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\Polly.pdb
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\Polly.xml
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csprojAssemblyReference.cache
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csproj.CoreCompileInputs.cache
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csproj.CopyComplete
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.exe
+A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.pdb

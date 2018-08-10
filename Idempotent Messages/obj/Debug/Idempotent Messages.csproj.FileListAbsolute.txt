@@ -5,3 +5,10 @@ A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Idempotent Messages\obj\Debug\
 A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Idempotent Messages\obj\Debug\Idempotent Messages.csproj.CoreCompileInputs.cache
 A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Idempotent Messages\obj\Debug\Idempotent Messages.exe
 A:\Fontes\Exemplos-de-Codigo\Exemplos-Asp.Net.MVC\Idempotent Messages\obj\Debug\Idempotent Messages.pdb
+A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\bin\Debug\Idempotent Messages.exe.config
+A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\bin\Debug\Idempotent Messages.exe
+A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\bin\Debug\Idempotent Messages.pdb
+A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.csprojAssemblyReference.cache
+A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.csproj.CoreCompileInputs.cache
+A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.exe
+A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.pdb

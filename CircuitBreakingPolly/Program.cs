@@ -15,6 +15,10 @@ namespace CircuitBreakingPolly
 
         static void Main(string[] args)
         {
+            var pmp = new PoliticasManipulacaoPolly();
+
+            // pmp.Verificar_Funcionamento_Circuit_Break();
+
             //RetryPolicy WaitRetry = PoliticasManipulacaoPolly.getPolicyRetry();
             //produtos = WaitRetry.Execute(() => RepositorioProdutos.GetProdutos(), new Context("Teste"));
             //Console.WriteLine("");
@@ -30,25 +34,24 @@ namespace CircuitBreakingPolly
 
             //n2 = 0;
 
-            //RetryPolicy WaitAndRetryCallMethod = PoliticasManipulacaoPolly.getPolicyWaitAndRetryCallMethod();
-            //result = WaitAndRetryCallMethod.Execute(() => Divisao(n1, n2));
-            //Console.WriteLine(result.ToString());
+            // RetryPolicy WaitAndRetryCallMethod = PoliticasManipulacaoPolly.getPolicyWaitAndRetryCallMethod();
+            //var result = WaitAndRetryCallMethod.Execute(() => Divisao(n1, n2));
+            // Console.WriteLine(result.ToString());
 
             n2 = 0;
 
-            var pmp = new PoliticasManipulacaoPolly();
             //Int32 result = pmp.Execute(() => Divisao(n1, n2));
             //Console.WriteLine(result.ToString());
             //Console.WriteLine("");
 
-            // var result = pmp.Execute(() => Divisao(n1, n2), () => Divisao(2, 2));
+            //  var result = pmp.Execute(() => Divisao(n1, n2), () => CallTask());
 
             //Task result = pmp.ExecuteCircuitBreaker(() => CallTask());
 
             //Task result = pmp.ExecuteFallback(() => CallTask(), () => CallTask2());
             Task result = pmp.ExecuteFallbackWrap(() => CallTask(), () => CallTask2());
 
-            Console.WriteLine(result.ToString());
+            //Console.WriteLine(result.ToString());
             Console.ReadKey();
         }
 
@@ -61,7 +64,7 @@ namespace CircuitBreakingPolly
         public static Task CallTask2()
         {
             Console.WriteLine("Task completa.");
-            throw new Exception();
+            return Task.CompletedTask;
         }
 
 

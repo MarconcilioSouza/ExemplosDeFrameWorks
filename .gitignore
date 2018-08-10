@@ -3,3 +3,7 @@
 ################################################################################
 
 /WebAppInsinghts/WebAppInsinghts/obj/Debug
+*.dll
+*.xml
+*.pdb
+*.config
