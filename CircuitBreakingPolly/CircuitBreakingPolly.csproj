@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contratos\ICalculo.cs" />
     <Compile Include="Contratos\ICircuitBreaker.cs" />
     <Compile Include="Contratos\ILog.cs" />
     <Compile Include="PoliticasManipulacaoPolly.cs" />

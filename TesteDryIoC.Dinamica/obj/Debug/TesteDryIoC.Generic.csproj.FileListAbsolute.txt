@@ -29,7 +29,6 @@ A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\bin\Debug\TesteDryIoC.Generi
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\bin\Debug\TesteDryIoC.Generic.pdb
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\bin\Debug\FluentValidation.dll
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\bin\Debug\FluentValidation.xml
-A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.csprojAssemblyReference.cache
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.csproj.CoreCompileInputs.cache
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.csproj.CopyComplete
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.exe

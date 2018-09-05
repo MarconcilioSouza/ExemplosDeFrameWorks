@@ -2,6 +2,7 @@
 using FluentValidation;
 using System;
 using System.Linq;
+using TesteDryIoC.Contratos;
 using TesteDryIoC.Generic.Validacoes;
 
 namespace TesteDryIoC.Generic
@@ -10,7 +11,19 @@ namespace TesteDryIoC.Generic
     {
         static void Main(string[] args)
         {
-            var container = ContainerRegister.getContainer();
+            Container container = new Container();
+            container.Register<ISoma, Soma>();
+            container.Register<ISubtracao, Subtracao>();
+
+            var subtracao = container.Resolve<ISubtracao>();
+            var resultadoSubtrair = subtracao.Subtrair(500, 200);
+
+
+            var somar = container.Resolve<ISoma>();
+            var resultadoSomar = somar.Somar(500, 200);
+
+                                                                    
+            //var container = ContainerRegister.getContainer();
             //
             var validadorDefout = ProvadersValidator<Produto>.GetValidators(container);
 
@@ -23,7 +36,7 @@ namespace TesteDryIoC.Generic
 
             var validadorRule = ProvadersValidator<Cliente>.GetValidators(container, (validadores) =>
             {
-                var validadorEncontrado = validadores.FirstOrDefault(x => x. CreateDescriptor().GetValidatorsForMember("ClienteValidatorRuleSet").Any());
+                var validadorEncontrado = validadores.FirstOrDefault(x => x.CreateDescriptor().GetValidatorsForMember("ClienteValidatorRuleSet").Any());
                 return validadorEncontrado ?? validadores.First();
             });
 
@@ -46,7 +59,7 @@ namespace TesteDryIoC.Generic
                 Console.WriteLine(item.ErrorMessage);
             }
 
-           // validadorRule2.Validate(cliente, ruleSet: "Names");
+            // validadorRule2.Validate(cliente, ruleSet: "Names");
 
             //var resultad1 = validador.Validate(cliente);
 
@@ -98,9 +111,9 @@ namespace TesteDryIoC.Generic
 
                 var teste = new ProdutoValidator();
 
-                teste.Validate(produto, ruleSet : "");
+                teste.Validate(produto, ruleSet: "");
 
-                resultad = validadorprodutoitem. Validate(produtoiten);
+                resultad = validadorprodutoitem.Validate(produtoiten);
             }
             catch (Exception e)
             {
