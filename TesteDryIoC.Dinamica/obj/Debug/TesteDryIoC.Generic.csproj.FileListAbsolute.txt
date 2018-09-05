@@ -33,3 +33,4 @@ A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generi
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.csproj.CopyComplete
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.exe
 A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.pdb
+A:\Fontes\ExemplosDeFrameWorks\TesteDryIoC.Dinamica\obj\Debug\TesteDryIoC.Generic.csprojAssemblyReference.cache

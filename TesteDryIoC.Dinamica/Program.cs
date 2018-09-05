@@ -11,6 +11,11 @@ namespace TesteDryIoC.Generic
     {
         static void Main(string[] args)
         {
+
+           var soma = ProvadersResolve<ISoma>.gercontainer();
+            var resultadosoma = soma.Somar(500, 200);
+
+
             Container container = new Container();
             container.Register<ISoma, Soma>();
             container.Register<ISubtracao, Subtracao>();
