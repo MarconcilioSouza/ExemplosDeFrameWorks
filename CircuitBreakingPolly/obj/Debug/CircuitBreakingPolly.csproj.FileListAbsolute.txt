@@ -29,3 +29,14 @@ A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPol
 A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csproj.CopyComplete
 A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.exe
 A:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.pdb
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\CircuitBreakingPolly.exe.config
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\CircuitBreakingPolly.exe
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\CircuitBreakingPolly.pdb
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\Polly.dll
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\Polly.pdb
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\bin\Debug\Polly.xml
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csprojAssemblyReference.cache
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csproj.CoreCompileInputs.cache
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.csproj.CopyComplete
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.exe
+E:\Fontes\ExemplosDeFrameWorks\CircuitBreakingPolly\obj\Debug\CircuitBreakingPolly.pdb

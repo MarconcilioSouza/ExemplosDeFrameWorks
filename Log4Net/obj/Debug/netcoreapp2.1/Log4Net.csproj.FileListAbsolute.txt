@@ -1,0 +1,11 @@
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\bin\Debug\netcoreapp2.1\Log4Net.deps.json
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\bin\Debug\netcoreapp2.1\Log4Net.runtimeconfig.json
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\bin\Debug\netcoreapp2.1\Log4Net.runtimeconfig.dev.json
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\bin\Debug\netcoreapp2.1\Log4Net.dll
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\obj\Debug\netcoreapp2.1\Log4Net.csprojAssemblyReference.cache
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\obj\Debug\netcoreapp2.1\Log4Net.csproj.CoreCompileInputs.cache
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\obj\Debug\netcoreapp2.1\Log4Net.AssemblyInfoInputs.cache
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\obj\Debug\netcoreapp2.1\Log4Net.AssemblyInfo.cs
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\bin\Debug\netcoreapp2.1\Log4Net.pdb
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\obj\Debug\netcoreapp2.1\Log4Net.dll
+A:\Fontes\ExemplosDeFrameWorks\Log4Net\obj\Debug\netcoreapp2.1\Log4Net.pdb

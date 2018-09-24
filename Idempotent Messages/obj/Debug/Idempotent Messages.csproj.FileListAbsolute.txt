@@ -12,3 +12,10 @@ A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages
 A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.csproj.CoreCompileInputs.cache
 A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.exe
 A:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.pdb
+E:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\bin\Debug\Idempotent Messages.exe.config
+E:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\bin\Debug\Idempotent Messages.exe
+E:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\bin\Debug\Idempotent Messages.pdb
+E:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.csprojAssemblyReference.cache
+E:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.csproj.CoreCompileInputs.cache
+E:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.exe
+E:\Fontes\ExemplosDeFrameWorks\Idempotent Messages\obj\Debug\Idempotent Messages.pdb

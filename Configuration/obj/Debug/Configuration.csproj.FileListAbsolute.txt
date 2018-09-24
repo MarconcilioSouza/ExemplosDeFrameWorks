@@ -10,3 +10,9 @@ A:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.csprojAssem
 A:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.csproj.CoreCompileInputs.cache
 A:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.dll
 A:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.pdb
+E:\Fontes\ExemplosDeFrameWorks\Configuration\bin\Debug\Configuration.dll
+E:\Fontes\ExemplosDeFrameWorks\Configuration\bin\Debug\Configuration.pdb
+E:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.csprojAssemblyReference.cache
+E:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.csproj.CoreCompileInputs.cache
+E:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.dll
+E:\Fontes\ExemplosDeFrameWorks\Configuration\obj\Debug\Configuration.pdb
