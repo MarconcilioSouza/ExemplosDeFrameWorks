@@ -14,7 +14,9 @@ namespace WSConsole
         {
             UsernameToken token = new UsernameToken("admin", "123456", PasswordOption.SendPlainText);
 
-            string passwordDigest = GetSHA1String(token.Nonce + token.Created.ToString() + token.Password);
+            string created = token.Created.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+
+            string passwordDigest = GetSHA1String(token.Nonce + created + token.Password);
             string tokennamespace = "woss";
             string nonce = Convert.ToBase64String(token.Nonce);
 
@@ -24,7 +26,7 @@ namespace WSConsole
                 "<{0}:Username>" + token.Username + "</{0}:Username>" +
                 "<{0}:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#Digest\">" + passwordDigest + "</{0}:Password>" +
                 "<{0}:Nonce EncodingType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary\">" + nonce + "</{0}:Nonce>" +
-                "<u:Created>" + token.Created.ToString() + "</u:Created></{0}:UsernameToken>", tokennamespace);
+                "<u:Created>" + created + "</u:Created></{0}:UsernameToken>", tokennamespace);
 
             Console.WriteLine(texto);
         }
