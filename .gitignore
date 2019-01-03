@@ -7,3 +7,9 @@
 *.xml
 *.pdb
 *.config
+/WS/.vs/WS/v15
+/WS/packages
+/WS/WS/bin/roslyn
+/WS/WS/obj/Debug
+/WS/WSConsole/bin/Debug
+/WS/WSConsole/obj/Debug

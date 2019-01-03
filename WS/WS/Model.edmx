@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ect_Pais">
+          <Key>
+            <PropertyRef Name="PAI_SG" />
+          </Key>
+          <Property Name="PAI_SG" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="PAI_SG_ALTERNATIVA" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="PAI_NO_PORTUGUES" Type="char" MaxLength="72" Nullable="false" />
+          <Property Name="PAI_NO_INGLES" Type="char" MaxLength="72" Nullable="false" />
+          <Property Name="PAI_NO_FRANCES" Type="char" MaxLength="72" Nullable="false" />
+          <Property Name="PAI_ABREVIATURA" Type="char" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Bairro">
+          <Key>
+            <PropertyRef Name="BAI_NU" />
+          </Key>
+          <Property Name="BAI_NU" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="BAI_NO" Type="nvarchar" MaxLength="72" Nullable="false" />
+          <Property Name="BAI_NO_ABREV" Type="nvarchar" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="Log_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU" />
+          </Key>
+          <Property Name="CPC_NU" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="CPC_NO" Type="varchar" MaxLength="72" Nullable="false" />
+          <Property Name="CPC_ENDERECO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="char" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_Bairro">
+          <Key>
+            <PropertyRef Name="BAI_NU" />
+            <PropertyRef Name="FCB_CEP_INI" />
+          </Key>
+          <Property Name="BAI_NU" Type="int" Nullable="false" />
+          <Property Name="FCB_CEP_INI" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="FCB_CEP_FIM" Type="char" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU" />
+            <PropertyRef Name="CPC_INICIAL" />
+          </Key>
+          <Property Name="CPC_NU" Type="int" Nullable="false" />
+          <Property Name="CPC_INICIAL" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CPC_FINAL" Type="nvarchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_Localidade">
+          <Key>
+            <PropertyRef Name="LOC_NU" />
+            <PropertyRef Name="LOC_CEP_INI" />
+          </Key>
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="LOC_CEP_INI" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="LOC_CEP_FIM" Type="char" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_UF">
+          <Key>
+            <PropertyRef Name="UFE_SG" />
+            <PropertyRef Name="UFE_CEP_INI" />
+          </Key>
+          <Property Name="UFE_SG" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="UFE_CEP_INI" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="UFE_CEP_FIM" Type="char" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_Uop">
+          <Key>
+            <PropertyRef Name="UOP_NU" />
+            <PropertyRef Name="FNC_INICIAL" />
+          </Key>
+          <Property Name="UOP_NU" Type="int" Nullable="false" />
+          <Property Name="FNC_INICIAL" Type="int" Nullable="false" />
+          <Property Name="FNC_FINAL" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Grande_Usuario">
+          <Key>
+            <PropertyRef Name="GRU_NU" />
+          </Key>
+          <Property Name="GRU_NU" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="BAI_NU" Type="int" Nullable="false" />
+          <Property Name="LOG_NU" Type="int" />
+          <Property Name="GRU_NO" Type="nvarchar" MaxLength="72" Nullable="false" />
+          <Property Name="GRU_ENDERECO" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="GRU_NO_ABREV" Type="nvarchar" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="Log_Localidade">
+          <Key>
+            <PropertyRef Name="LOC_NU" />
+          </Key>
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NO" Type="varchar" MaxLength="72" Nullable="false" />
+          <Property Name="CEP" Type="char" MaxLength="8" />
+          <Property Name="LOC_IN_SIT" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="LOC_IN_TIPO_LOC" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="LOC_NU_SUB" Type="int" />
+          <Property Name="LOC_NO_ABREV" Type="varchar" MaxLength="36" />
+          <Property Name="MUN_NU" Type="char" MaxLength="7" />
+          <Property Name="CAD_MUNI_RADAR" Type="int" />
+        </EntityType>
+        <EntityType Name="Log_Logradouro">
+          <Key>
+            <PropertyRef Name="LOG_NU" />
+          </Key>
+          <Property Name="LOG_NU" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="BAI_NU_INI" Type="int" Nullable="false" />
+          <Property Name="BAI_NU_FIM" Type="int" />
+          <Property Name="LOG_NO" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LOG_COMPLEMENTO" Type="nvarchar" MaxLength="100" />
+          <Property Name="CEP" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="TLO_TX" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="LOG_STA_TLO" Type="char" MaxLength="1" />
+          <Property Name="LOG_NO_ABREV" Type="char" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="Log_Num_Sec">
+          <Key>
+            <PropertyRef Name="LOG_NU" />
+          </Key>
+          <Property Name="LOG_NU" Type="int" Nullable="false" />
+          <Property Name="SEC_NU_INI" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SEC_NU_FIM" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SEC_IN_LADO" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Unid_Oper">
+          <Key>
+            <PropertyRef Name="UOP_NU" />
+          </Key>
+          <Property Name="UOP_NU" Type="int" Nullable="false" />
+          <Property Name="UFE_SG" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="BAI_NU" Type="int" Nullable="false" />
+          <Property Name="LOG_NU" Type="int" />
+          <Property Name="UOP_NO" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UOP_ENDERECO" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="UOP_IN_CP" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UOP_NO_ABREV" Type="nvarchar" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="Log_Var_Bai">
+          <Key>
+            <PropertyRef Name="BAI_NU" />
+            <PropertyRef Name="VDB_NU" />
+          </Key>
+          <Property Name="BAI_NU" Type="int" Nullable="false" />
+          <Property Name="VDB_NU" Type="int" Nullable="false" />
+          <Property Name="VDB_TX" Type="varchar" MaxLength="72" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Var_Loc">
+          <Key>
+            <PropertyRef Name="LOC_NU" />
+            <PropertyRef Name="VAL_NU" />
+          </Key>
+          <Property Name="LOC_NU" Type="int" Nullable="false" />
+          <Property Name="VAL_NU" Type="int" Nullable="false" />
+          <Property Name="VAL_TX" Type="nvarchar" MaxLength="72" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Var_Log">
+          <Key>
+            <PropertyRef Name="LOG_NU" />
+            <PropertyRef Name="VLO_NU" />
+          </Key>
+          <Property Name="LOG_NU" Type="int" Nullable="false" />
+          <Property Name="VLO_NU" Type="int" Nullable="false" />
+          <Property Name="TLO_TX" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="VLO_TX" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dne.dbo.vw_BuscarEndereco' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_BuscarEndereco">
+          <Key>
+            <PropertyRef Name="ufe_sg" />
+            <PropertyRef Name="loc_no" />
+            <PropertyRef Name="bai_no" />
+            <PropertyRef Name="log_no" />
+            <PropertyRef Name="nome" />
+          </Key>
+          <Property Name="ufe_sg" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="loc_no" Type="varchar" MaxLength="72" Nullable="false" />
+          <Property Name="CAD_MUNI_RADAR" Type="int" />
+          <Property Name="bai_no" Type="nvarchar" MaxLength="72" Nullable="false" />
+          <Property Name="log_no" Type="nvarchar" MaxLength="137" Nullable="false" />
+          <Property Name="cep" Type="char" MaxLength="8" />
+          <Property Name="log_complemento" Type="nvarchar" MaxLength="100" />
+          <Property Name="nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dneModelStoreContainer">
+          <EntitySet Name="Ect_Pais" EntityType="Self.Ect_Pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Bairro" EntityType="Self.Log_Bairro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_CPC" EntityType="Self.Log_CPC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Faixa_Bairro" EntityType="Self.Log_Faixa_Bairro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Faixa_CPC" EntityType="Self.Log_Faixa_CPC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Faixa_Localidade" EntityType="Self.Log_Faixa_Localidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Faixa_UF" EntityType="Self.Log_Faixa_UF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Faixa_Uop" EntityType="Self.Log_Faixa_Uop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Grande_Usuario" EntityType="Self.Log_Grande_Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Localidade" EntityType="Self.Log_Localidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Logradouro" EntityType="Self.Log_Logradouro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Num_Sec" EntityType="Self.Log_Num_Sec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Unid_Oper" EntityType="Self.Log_Unid_Oper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Var_Bai" EntityType="Self.Log_Var_Bai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Var_Loc" EntityType="Self.Log_Var_Loc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Var_Log" EntityType="Self.Log_Var_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_BuscarEndereco" EntityType="Self.vw_BuscarEndereco" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_BuscarEndereco].[ufe_sg] AS [ufe_sg], 
+    [vw_BuscarEndereco].[loc_no] AS [loc_no], 
+    [vw_BuscarEndereco].[CAD_MUNI_RADAR] AS [CAD_MUNI_RADAR], 
+    [vw_BuscarEndereco].[bai_no] AS [bai_no], 
+    [vw_BuscarEndereco].[log_no] AS [log_no], 
+    [vw_BuscarEndereco].[cep] AS [cep], 
+    [vw_BuscarEndereco].[log_complemento] AS [log_complemento], 
+    [vw_BuscarEndereco].[nome] AS [nome]
+    FROM [dbo].[vw_BuscarEndereco] AS [vw_BuscarEndereco]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ect_Pais">
+          <Key>
+            <PropertyRef Name="PAI_SG" />
+          </Key>
+          <Property Name="PAI_SG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAI_SG_ALTERNATIVA" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAI_NO_PORTUGUES" Type="String" MaxLength="72" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAI_NO_INGLES" Type="String" MaxLength="72" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAI_NO_FRANCES" Type="String" MaxLength="72" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAI_ABREVIATURA" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Bairro">
+          <Key>
+            <PropertyRef Name="BAI_NU" />
+          </Key>
+          <Property Name="BAI_NU" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="BAI_NO" Type="String" MaxLength="72" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BAI_NO_ABREV" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Log_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU" />
+          </Key>
+          <Property Name="CPC_NU" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="CPC_NO" Type="String" MaxLength="72" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPC_ENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_Bairro">
+          <Key>
+            <PropertyRef Name="BAI_NU" />
+            <PropertyRef Name="FCB_CEP_INI" />
+          </Key>
+          <Property Name="BAI_NU" Type="Int32" Nullable="false" />
+          <Property Name="FCB_CEP_INI" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FCB_CEP_FIM" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_CPC">
+          <Key>
+            <PropertyRef Name="CPC_NU" />
+            <PropertyRef Name="CPC_INICIAL" />
+          </Key>
+          <Property Name="CPC_NU" Type="Int32" Nullable="false" />
+          <Property Name="CPC_INICIAL" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CPC_FINAL" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_Localidade">
+          <Key>
+            <PropertyRef Name="LOC_NU" />
+            <PropertyRef Name="LOC_CEP_INI" />
+          </Key>
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="LOC_CEP_INI" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_CEP_FIM" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_UF">
+          <Key>
+            <PropertyRef Name="UFE_SG" />
+            <PropertyRef Name="UFE_CEP_INI" />
+          </Key>
+          <Property Name="UFE_SG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UFE_CEP_INI" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UFE_CEP_FIM" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Faixa_Uop">
+          <Key>
+            <PropertyRef Name="UOP_NU" />
+            <PropertyRef Name="FNC_INICIAL" />
+          </Key>
+          <Property Name="UOP_NU" Type="Int32" Nullable="false" />
+          <Property Name="FNC_INICIAL" Type="Int32" Nullable="false" />
+          <Property Name="FNC_FINAL" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Grande_Usuario">
+          <Key>
+            <PropertyRef Name="GRU_NU" />
+          </Key>
+          <Property Name="GRU_NU" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="BAI_NU" Type="Int32" Nullable="false" />
+          <Property Name="LOG_NU" Type="Int32" />
+          <Property Name="GRU_NO" Type="String" MaxLength="72" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GRU_ENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GRU_NO_ABREV" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Log_Localidade">
+          <Key>
+            <PropertyRef Name="LOC_NU" />
+          </Key>
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_NO" Type="String" MaxLength="72" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="LOC_IN_SIT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_IN_TIPO_LOC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_NU_SUB" Type="Int32" />
+          <Property Name="LOC_NO_ABREV" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="MUN_NU" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="CAD_MUNI_RADAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Log_Logradouro">
+          <Key>
+            <PropertyRef Name="LOG_NU" />
+          </Key>
+          <Property Name="LOG_NU" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="BAI_NU_INI" Type="Int32" Nullable="false" />
+          <Property Name="BAI_NU_FIM" Type="Int32" />
+          <Property Name="LOG_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOG_COMPLEMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TLO_TX" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOG_STA_TLO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LOG_NO_ABREV" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Log_Num_Sec">
+          <Key>
+            <PropertyRef Name="LOG_NU" />
+          </Key>
+          <Property Name="LOG_NU" Type="Int32" Nullable="false" />
+          <Property Name="SEC_NU_INI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEC_NU_FIM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEC_IN_LADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Unid_Oper">
+          <Key>
+            <PropertyRef Name="UOP_NU" />
+          </Key>
+          <Property Name="UOP_NU" Type="Int32" Nullable="false" />
+          <Property Name="UFE_SG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="BAI_NU" Type="Int32" Nullable="false" />
+          <Property Name="LOG_NU" Type="Int32" />
+          <Property Name="UOP_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UOP_ENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UOP_IN_CP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UOP_NO_ABREV" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Log_Var_Bai">
+          <Key>
+            <PropertyRef Name="BAI_NU" />
+            <PropertyRef Name="VDB_NU" />
+          </Key>
+          <Property Name="BAI_NU" Type="Int32" Nullable="false" />
+          <Property Name="VDB_NU" Type="Int32" Nullable="false" />
+          <Property Name="VDB_TX" Type="String" MaxLength="72" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Var_Loc">
+          <Key>
+            <PropertyRef Name="LOC_NU" />
+            <PropertyRef Name="VAL_NU" />
+          </Key>
+          <Property Name="LOC_NU" Type="Int32" Nullable="false" />
+          <Property Name="VAL_NU" Type="Int32" Nullable="false" />
+          <Property Name="VAL_TX" Type="String" MaxLength="72" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log_Var_Log">
+          <Key>
+            <PropertyRef Name="LOG_NU" />
+            <PropertyRef Name="VLO_NU" />
+          </Key>
+          <Property Name="LOG_NU" Type="Int32" Nullable="false" />
+          <Property Name="VLO_NU" Type="Int32" Nullable="false" />
+          <Property Name="TLO_TX" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VLO_TX" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_BuscarEndereco">
+          <Key>
+            <PropertyRef Name="ufe_sg" />
+            <PropertyRef Name="loc_no" />
+            <PropertyRef Name="bai_no" />
+            <PropertyRef Name="log_no" />
+            <PropertyRef Name="nome" />
+          </Key>
+          <Property Name="ufe_sg" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="loc_no" Type="String" MaxLength="72" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CAD_MUNI_RADAR" Type="Int32" />
+          <Property Name="bai_no" Type="String" MaxLength="72" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="log_no" Type="String" MaxLength="137" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cep" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="log_complemento" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dneEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ect_Pais" EntityType="Self.Ect_Pais" />
+          <EntitySet Name="Log_Bairro" EntityType="Self.Log_Bairro" />
+          <EntitySet Name="Log_CPC" EntityType="Self.Log_CPC" />
+          <EntitySet Name="Log_Faixa_Bairro" EntityType="Self.Log_Faixa_Bairro" />
+          <EntitySet Name="Log_Faixa_CPC" EntityType="Self.Log_Faixa_CPC" />
+          <EntitySet Name="Log_Faixa_Localidade" EntityType="Self.Log_Faixa_Localidade" />
+          <EntitySet Name="Log_Faixa_UF" EntityType="Self.Log_Faixa_UF" />
+          <EntitySet Name="Log_Faixa_Uop" EntityType="Self.Log_Faixa_Uop" />
+          <EntitySet Name="Log_Grande_Usuario" EntityType="Self.Log_Grande_Usuario" />
+          <EntitySet Name="Log_Localidade" EntityType="Self.Log_Localidade" />
+          <EntitySet Name="Log_Logradouro" EntityType="Self.Log_Logradouro" />
+          <EntitySet Name="Log_Num_Sec" EntityType="Self.Log_Num_Sec" />
+          <EntitySet Name="Log_Unid_Oper" EntityType="Self.Log_Unid_Oper" />
+          <EntitySet Name="Log_Var_Bai" EntityType="Self.Log_Var_Bai" />
+          <EntitySet Name="Log_Var_Loc" EntityType="Self.Log_Var_Loc" />
+          <EntitySet Name="Log_Var_Log" EntityType="Self.Log_Var_Log" />
+          <EntitySet Name="vw_BuscarEndereco" EntityType="Self.vw_BuscarEndereco" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dneModelStoreContainer" CdmEntityContainer="dneEntity">
+          <EntitySetMapping Name="Ect_Pais">
+            <EntityTypeMapping TypeName="dneModel.Ect_Pais">
+              <MappingFragment StoreEntitySet="Ect_Pais">
+                <ScalarProperty Name="PAI_SG" ColumnName="PAI_SG" />
+                <ScalarProperty Name="PAI_SG_ALTERNATIVA" ColumnName="PAI_SG_ALTERNATIVA" />
+                <ScalarProperty Name="PAI_NO_PORTUGUES" ColumnName="PAI_NO_PORTUGUES" />
+                <ScalarProperty Name="PAI_NO_INGLES" ColumnName="PAI_NO_INGLES" />
+                <ScalarProperty Name="PAI_NO_FRANCES" ColumnName="PAI_NO_FRANCES" />
+                <ScalarProperty Name="PAI_ABREVIATURA" ColumnName="PAI_ABREVIATURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Bairro">
+            <EntityTypeMapping TypeName="dneModel.Log_Bairro">
+              <MappingFragment StoreEntitySet="Log_Bairro">
+                <ScalarProperty Name="BAI_NU" ColumnName="BAI_NU" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="BAI_NO" ColumnName="BAI_NO" />
+                <ScalarProperty Name="BAI_NO_ABREV" ColumnName="BAI_NO_ABREV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_CPC">
+            <EntityTypeMapping TypeName="dneModel.Log_CPC">
+              <MappingFragment StoreEntitySet="Log_CPC">
+                <ScalarProperty Name="CPC_NU" ColumnName="CPC_NU" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="CPC_NO" ColumnName="CPC_NO" />
+                <ScalarProperty Name="CPC_ENDERECO" ColumnName="CPC_ENDERECO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Faixa_Bairro">
+            <EntityTypeMapping TypeName="dneModel.Log_Faixa_Bairro">
+              <MappingFragment StoreEntitySet="Log_Faixa_Bairro">
+                <ScalarProperty Name="BAI_NU" ColumnName="BAI_NU" />
+                <ScalarProperty Name="FCB_CEP_INI" ColumnName="FCB_CEP_INI" />
+                <ScalarProperty Name="FCB_CEP_FIM" ColumnName="FCB_CEP_FIM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Faixa_CPC">
+            <EntityTypeMapping TypeName="dneModel.Log_Faixa_CPC">
+              <MappingFragment StoreEntitySet="Log_Faixa_CPC">
+                <ScalarProperty Name="CPC_NU" ColumnName="CPC_NU" />
+                <ScalarProperty Name="CPC_INICIAL" ColumnName="CPC_INICIAL" />
+                <ScalarProperty Name="CPC_FINAL" ColumnName="CPC_FINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Faixa_Localidade">
+            <EntityTypeMapping TypeName="dneModel.Log_Faixa_Localidade">
+              <MappingFragment StoreEntitySet="Log_Faixa_Localidade">
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="LOC_CEP_INI" ColumnName="LOC_CEP_INI" />
+                <ScalarProperty Name="LOC_CEP_FIM" ColumnName="LOC_CEP_FIM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Faixa_UF">
+            <EntityTypeMapping TypeName="dneModel.Log_Faixa_UF">
+              <MappingFragment StoreEntitySet="Log_Faixa_UF">
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="UFE_CEP_INI" ColumnName="UFE_CEP_INI" />
+                <ScalarProperty Name="UFE_CEP_FIM" ColumnName="UFE_CEP_FIM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Faixa_Uop">
+            <EntityTypeMapping TypeName="dneModel.Log_Faixa_Uop">
+              <MappingFragment StoreEntitySet="Log_Faixa_Uop">
+                <ScalarProperty Name="UOP_NU" ColumnName="UOP_NU" />
+                <ScalarProperty Name="FNC_INICIAL" ColumnName="FNC_INICIAL" />
+                <ScalarProperty Name="FNC_FINAL" ColumnName="FNC_FINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Grande_Usuario">
+            <EntityTypeMapping TypeName="dneModel.Log_Grande_Usuario">
+              <MappingFragment StoreEntitySet="Log_Grande_Usuario">
+                <ScalarProperty Name="GRU_NU" ColumnName="GRU_NU" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="BAI_NU" ColumnName="BAI_NU" />
+                <ScalarProperty Name="LOG_NU" ColumnName="LOG_NU" />
+                <ScalarProperty Name="GRU_NO" ColumnName="GRU_NO" />
+                <ScalarProperty Name="GRU_ENDERECO" ColumnName="GRU_ENDERECO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="GRU_NO_ABREV" ColumnName="GRU_NO_ABREV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Localidade">
+            <EntityTypeMapping TypeName="dneModel.Log_Localidade">
+              <MappingFragment StoreEntitySet="Log_Localidade">
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="LOC_NO" ColumnName="LOC_NO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="LOC_IN_SIT" ColumnName="LOC_IN_SIT" />
+                <ScalarProperty Name="LOC_IN_TIPO_LOC" ColumnName="LOC_IN_TIPO_LOC" />
+                <ScalarProperty Name="LOC_NU_SUB" ColumnName="LOC_NU_SUB" />
+                <ScalarProperty Name="LOC_NO_ABREV" ColumnName="LOC_NO_ABREV" />
+                <ScalarProperty Name="MUN_NU" ColumnName="MUN_NU" />
+                <ScalarProperty Name="CAD_MUNI_RADAR" ColumnName="CAD_MUNI_RADAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Logradouro">
+            <EntityTypeMapping TypeName="dneModel.Log_Logradouro">
+              <MappingFragment StoreEntitySet="Log_Logradouro">
+                <ScalarProperty Name="LOG_NU" ColumnName="LOG_NU" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="BAI_NU_INI" ColumnName="BAI_NU_INI" />
+                <ScalarProperty Name="BAI_NU_FIM" ColumnName="BAI_NU_FIM" />
+                <ScalarProperty Name="LOG_NO" ColumnName="LOG_NO" />
+                <ScalarProperty Name="LOG_COMPLEMENTO" ColumnName="LOG_COMPLEMENTO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="TLO_TX" ColumnName="TLO_TX" />
+                <ScalarProperty Name="LOG_STA_TLO" ColumnName="LOG_STA_TLO" />
+                <ScalarProperty Name="LOG_NO_ABREV" ColumnName="LOG_NO_ABREV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Num_Sec">
+            <EntityTypeMapping TypeName="dneModel.Log_Num_Sec">
+              <MappingFragment StoreEntitySet="Log_Num_Sec">
+                <ScalarProperty Name="LOG_NU" ColumnName="LOG_NU" />
+                <ScalarProperty Name="SEC_NU_INI" ColumnName="SEC_NU_INI" />
+                <ScalarProperty Name="SEC_NU_FIM" ColumnName="SEC_NU_FIM" />
+                <ScalarProperty Name="SEC_IN_LADO" ColumnName="SEC_IN_LADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Unid_Oper">
+            <EntityTypeMapping TypeName="dneModel.Log_Unid_Oper">
+              <MappingFragment StoreEntitySet="Log_Unid_Oper">
+                <ScalarProperty Name="UOP_NU" ColumnName="UOP_NU" />
+                <ScalarProperty Name="UFE_SG" ColumnName="UFE_SG" />
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="BAI_NU" ColumnName="BAI_NU" />
+                <ScalarProperty Name="LOG_NU" ColumnName="LOG_NU" />
+                <ScalarProperty Name="UOP_NO" ColumnName="UOP_NO" />
+                <ScalarProperty Name="UOP_ENDERECO" ColumnName="UOP_ENDERECO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="UOP_IN_CP" ColumnName="UOP_IN_CP" />
+                <ScalarProperty Name="UOP_NO_ABREV" ColumnName="UOP_NO_ABREV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Var_Bai">
+            <EntityTypeMapping TypeName="dneModel.Log_Var_Bai">
+              <MappingFragment StoreEntitySet="Log_Var_Bai">
+                <ScalarProperty Name="BAI_NU" ColumnName="BAI_NU" />
+                <ScalarProperty Name="VDB_NU" ColumnName="VDB_NU" />
+                <ScalarProperty Name="VDB_TX" ColumnName="VDB_TX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Var_Loc">
+            <EntityTypeMapping TypeName="dneModel.Log_Var_Loc">
+              <MappingFragment StoreEntitySet="Log_Var_Loc">
+                <ScalarProperty Name="LOC_NU" ColumnName="LOC_NU" />
+                <ScalarProperty Name="VAL_NU" ColumnName="VAL_NU" />
+                <ScalarProperty Name="VAL_TX" ColumnName="VAL_TX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Var_Log">
+            <EntityTypeMapping TypeName="dneModel.Log_Var_Log">
+              <MappingFragment StoreEntitySet="Log_Var_Log">
+                <ScalarProperty Name="LOG_NU" ColumnName="LOG_NU" />
+                <ScalarProperty Name="VLO_NU" ColumnName="VLO_NU" />
+                <ScalarProperty Name="TLO_TX" ColumnName="TLO_TX" />
+                <ScalarProperty Name="VLO_TX" ColumnName="VLO_TX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_BuscarEndereco">
+            <EntityTypeMapping TypeName="dneModel.vw_BuscarEndereco">
+              <MappingFragment StoreEntitySet="vw_BuscarEndereco">
+                <ScalarProperty Name="ufe_sg" ColumnName="ufe_sg" />
+                <ScalarProperty Name="loc_no" ColumnName="loc_no" />
+                <ScalarProperty Name="CAD_MUNI_RADAR" ColumnName="CAD_MUNI_RADAR" />
+                <ScalarProperty Name="bai_no" ColumnName="bai_no" />
+                <ScalarProperty Name="log_no" ColumnName="log_no" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="log_complemento" ColumnName="log_complemento" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
